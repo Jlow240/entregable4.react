@@ -1,0 +1,74 @@
+.userCard {
+    display: block;
+    text-align: left;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    border:  1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.userCard__name {
+    padding: 20px;
+    font-size: 24px;
+}
+
+.userCard__list {
+    display: block;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.userCard__item {
+    
+}
+
+.userCard__footer {
+    display: flex;
+    justify-content:space-around;
+    padding: 20px;
+}
+
+.userCard__btn1 {
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    height: 32px;
+    width: auto;
+    cursor: pointer;
+    transition: background 200ms ease-in-out;
+}
+
+.userCard__btn1 i {
+    font-size: 24px;
+} 
+
+.userCard__btn1:hover {
+    background-color: rgb(190, 2, 2);
+    color: white;
+    border: 2px solid white;
+}
+
+.userCard__btn2 {
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    height: 32px;
+    width: auto;
+    cursor: pointer;
+    transition: background 200ms ease-in-out;
+}
+
+.userCard__btn2 i {
+    font-size: 20px;
+}
+
+.userCard__btn2:hover {
+    background-color: green;
+    color: white;
+    border: 2px solid white;
+}

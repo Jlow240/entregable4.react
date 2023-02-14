@@ -1,0 +1,108 @@
+/*darle a las cosas del input la animacion del borde inferior*/
+
+.modalForm {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    display: none;
+}
+
+.activeForm {
+    display: grid;
+}
+
+.modalForm__form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    border-radius: 7px;
+    box-shadow: 0px 1px 2px black;
+    position: relative;
+    animation-name: slide-in;
+    animation-duration: 0.75s;
+    user-select: none;
+}
+
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 700px) {}
+
+.modalForm__form-title {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.modalForm__x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 300ms ease-in-out;
+}
+
+.modalForm__x:hover {
+    color: rgb(161, 5, 36);
+}
+
+.modalForm__div {
+    line-height: 30px;
+}
+
+.modalForm__label {
+    display: block;
+}
+
+.modalForm__input {
+    width: 100%;
+    background: none;
+    padding: 9px;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    font-family: var(--third-font);
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.modalForm__btn {
+    background-color: white;
+    border: none;
+    font-family: var(--third-font);
+    color: black;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 300ms ease-in-out;
+}
+
+.modalForm__btn:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
