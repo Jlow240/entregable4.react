@@ -1,8 +1,16 @@
 .App {
     font-family: var(--third-font);
+    transition: background 300ms ease-in-out;
+}
+
+#dark {
+    background-color:white ;
+}
+
+#light{
+    background-color: black ;
 }
 
 body {
-    background-color: #ffffff;
-    
+    user-select: none;
 }

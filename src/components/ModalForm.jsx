@@ -43,23 +43,23 @@ const ModalForm = ({ isShowModal, handleClickShowModal, createUser, updatingUser
                 <i onClick={handleClickClose} className='modalForm__x bx bx-x'></i>
                 <div className='modalForm__div'>
                     <label className='modalForm__label'>First Name</label>
-                    <input className='modalForm__input' type="text" {...register("first_name")} />
+                    <input className='modalForm__input' type="text" {...register("first_name")} placeholder=":D"/>
                 </div>
                 <div className='modalForm__div'>
                     <label className='modalForm__label'>Last Name</label>
-                    <input className='modalForm__input' type="text" {...register("last_name")} />
+                    <input className='modalForm__input' type="text" {...register("last_name")}  placeholder=":0"/>
                 </div>
                 <div className='modalForm__div'>
                     <label className='modalForm__label'>Email</label>
-                    <input className='modalForm__input' type="email" {...register("email")} />
+                    <input className='modalForm__input' type="email" {...register("email")} placeholder=":$"/>
                 </div>
                 <div className='modalForm__div'>
                     <label className='modalForm__label'>Password</label>
-                    <input className='modalForm__input' type="password" {...register("password")} />
+                    <input className='modalForm__input' type="password" {...register("password")} placeholder="~.~"/>
                 </div>
                 <div className='modalForm__div'>
                     <label className='modalForm__label'>Birthday</label>
-                    <input className='modalForm__input' type="date" {...register("birthday")} />
+                    <input className='modalForm__input' type="date" {...register("birthday")} placeholder="Birth"/>
                 </div>
                 <button className='modalForm__btn' >{updatingUser ? "Save Changes" : "Create User"}</button>
             </form>

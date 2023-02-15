@@ -1,5 +1,4 @@
 /*darle a las cosas del input la animacion del borde inferior*/
-
 .modalForm {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
@@ -46,6 +45,20 @@
     }
 }
 
+#dark .modalForm__form {
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0px 1px 2px black;
+}
+
+#light .modalForm__form {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 3px solid white;
+
+}
 
 @media (max-width: 700px) {}
 
@@ -87,9 +100,23 @@
     border-bottom: 2px solid white;
 }
 
+
+#dark .modalForm__input {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+#light .modalForm__input {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+
+
+
 .modalForm__btn {
     background-color: white;
-    border: none;
+    border: 2px solid black;
     font-family: var(--third-font);
     color: black;
     padding: 10px;
@@ -105,4 +132,28 @@
     background-color: black;
     color: white;
     border: 2px solid white;
+}
+
+#dark .modalForm__btn {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+#light .modalForm__btn {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+#dark .modalForm__btn:hover {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+#light .modalForm__btn:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
 }

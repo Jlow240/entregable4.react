@@ -6,31 +6,82 @@
     align-items: center;
     width: 300px;
     height: auto;
-    border:  1px solid black;
+    border: 1px solid black;
     border-radius: 10px;
     background-color: black;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.5);
+    transition: background 300ms ease-in-out;
+}
+
+#dark .userCard {
+    color: white;
+    background-color:black ;
+    border: 1px solid black;
+}
+
+#light .userCard {
+    color: black;
+    background-color: white ;
+    border: 1px solid white;
 }
 
 .userCard__name {
+    text-align: center;
     padding: 20px;
     font-size: 24px;
+    transition: color .5s;
 }
+
+.userCard:hover {
+    transform: scale(1.02);
+}
+
+.userCard:hover .userCard__name{
+    animation-name: moveX;
+    animation-timing-function:ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes moveX {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
 
 .userCard__list {
-    display: block;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 1.6;
     font-size: 20px;
+    transition: color 300ms ease-in-out;
 }
 
-.userCard__item {
-    
+#dark .userCard__list {
+    color: white;
+}
+
+#light .userCard__list {
+    color: black;
+}
+
+.userCard__item span{
+    font-weight: 700;
 }
 
 .userCard__footer {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     padding: 20px;
+    transition: color 300ms ease-in-out;
 }
 
 .userCard__btn1 {
@@ -40,15 +91,16 @@
     height: 32px;
     width: auto;
     cursor: pointer;
-    transition: background 200ms ease-in-out;
+    transition: background 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 
 .userCard__btn1 i {
     font-size: 24px;
-} 
+}
 
 .userCard__btn1:hover {
-    background-color: rgb(190, 2, 2);
+    background-color: rgb(161, 5, 36);
     color: white;
     border: 2px solid white;
 }
@@ -60,7 +112,8 @@
     height: 32px;
     width: auto;
     cursor: pointer;
-    transition: background 200ms ease-in-out;
+    transition: background 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 
 .userCard__btn2 i {
@@ -68,7 +121,58 @@
 }
 
 .userCard__btn2:hover {
-    background-color: green;
+    background-color: #8ba74d;
     color: white;
     border: 2px solid white;
+}
+
+
+#dark .userCard__btn1 {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+}
+
+#light .userCard__btn1 {
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+}
+
+#dark .userCard__btn1:hover {
+    background-color: rgb(161, 5, 36);
+    border: 3px solid white;
+    color: white;
+}
+
+#light .userCard__btn1:hover {
+    background-color: rgb(161, 5, 36);
+    border: 3px solid black;
+    color: black;
+}
+
+
+
+#dark .userCard__btn2 {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+}
+
+#light .userCard__btn2 {
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+}
+
+#dark .userCard__btn2:hover {
+    background-color: #8ba74d;
+    border: 3px solid white;
+    color: white;
+}
+
+#light .userCard__btn2:hover {
+    background-color: #8ba74d;
+    border: 3px solid black;
+    color: black;
 }

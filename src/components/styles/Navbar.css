@@ -4,8 +4,19 @@
     padding: 24px;
     align-items: center;
     gap: 10px;
-    background-color: #000000;
+    background-color: black;
     margin-bottom: 20px;
+    transition: background 300ms ease-in-out;
+}
+
+#dark .navbar {
+    color: white;
+    background-color: black;
+}
+
+#light .navbar {
+    color: black;
+    background-color: white;
 }
 
 .navbar__title {
@@ -13,6 +24,7 @@
     font-size: 44px;
     width: 130px;
     margin: 0;
+    transition: color 400ms ease-in-out;
 }
 
 @media (min-width: 600px) {
@@ -22,6 +34,14 @@
     }
 }
 
+#dark .navbar__title {
+    color: white;
+}
+
+#light .navbar__title {
+    color: black;
+}
+
 
 .navbar__btnyang {
     display: flex;
@@ -29,6 +49,7 @@
     justify-content: center;
     height: 60px;
     width: 60px;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -39,7 +60,7 @@
 }
 
 .bxs-yin-yang:hover {
-    font-size: 65px;  
+    font-size: 63px;  
     transform: rotate(360deg);
 }
 
@@ -50,11 +71,11 @@
     font-family: var(--third-font);
     font-size: 17px;
     font-weight: 600;
-    border: none;
+    border: 3px solid black;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 200ms ease-in-out;
+    transition: background 300ms ease-in-out;
 }
 
 @media (min-width: 600px) {
@@ -68,4 +89,28 @@
     background-color: black;
     color: white;
     border: 3px solid white;
+}
+
+#dark .navbar__btn {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+}
+
+#light .navbar__btn {
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+}
+
+#dark .navbar__btn:hover {
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+}
+
+#light .navbar__btn:hover {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
 }

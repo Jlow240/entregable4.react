@@ -1,0 +1,19 @@
+.footer {
+    color: black;
+    text-align: center;
+    transition: background 300ms ease-in-out;
+}
+
+#dark .footer {
+    color: white;
+    background-color:black ;
+}
+
+#light .footer {
+    color: black;
+    background-color: white ;
+}
+
+.footer__title {
+    font-weight: 400;
+}

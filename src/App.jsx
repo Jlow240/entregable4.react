@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
+import Footer from './components/Footer'
 import ModalForm from './components/ModalForm'
 import Navbar from './components/Navbar'
 import UsersList from './components/UsersList'
@@ -11,10 +12,13 @@ function App() {
   const [users, setUsers] = useState([])
   const [isShowModal, setIsShowModal] = useState(false)
   const [updatingUser, setUpdatingUser] = useState()
+  const [theme, setTheme] = useState("dark")
 
   const handleClickShowModal = () => {
     setIsShowModal((isShowModal) => !isShowModal)
   }
+
+  const changeTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
   const createUser = (data) => {
     axios
@@ -56,11 +60,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      {
-        users ? (   
-          <>   
-      <Navbar handleClickShowModal={handleClickShowModal} />
+    <div className="App" id={theme}> 
+      <Navbar theme={theme} changeTheme={changeTheme} handleClickShowModal={handleClickShowModal} />
       <ModalForm
         handleClickShowModal={handleClickShowModal}
         isShowModal={isShowModal}
@@ -75,12 +76,7 @@ function App() {
         setUpdatingUser={setUpdatingUser}
         handleClickShowModal={handleClickShowModal}
       />
-      <footer>
-        <h5>Created by Juan Luis Orozco</h5>
-      </footer></> 
-      ) : <Loader />
-      }
-
+      <Footer/>
     </div>
   )
 }
