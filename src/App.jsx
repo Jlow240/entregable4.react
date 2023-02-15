@@ -23,30 +23,44 @@ function App() {
   const changeTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
   const newUserCreated = () => {
-    toast.success('User created!', {
-      position: "top-center",
+    toast.success('👌 User created!', {
+      position: "bottom-left",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: theme,
       });
   }
 
   const deletedUser = () => {
-    toast.error('User Deleted!', {
-      position: "top-center",
+    toast.error('🧨 User Deleted!', {
+      position: "bottom-left",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: theme,
       });
   }
+
+  const updatedUser = () => {
+    toast.info('👀 User updated!', {
+      position: "bottom-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: theme,
+      });
+  }
+
 
   const createUser = (data) => {
     axios
@@ -82,6 +96,7 @@ function App() {
       .then(() => {
         getAllUsers()
         handleClickShowModal()
+        updatedUser()
       })
       .catch((err) => console.log(err))
   }
