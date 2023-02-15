@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import ModalForm from './components/ModalForm'
 import Navbar from './components/Navbar'
 import UsersList from './components/UsersList'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BASE_URL = "https://users-crud.academlo.tech/"
 
@@ -20,12 +22,39 @@ function App() {
 
   const changeTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
+  const newUserCreated = () => {
+    toast.success('User created!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  }
+
+  const deletedUser = () => {
+    toast.error('User Deleted!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  }
+
   const createUser = (data) => {
     axios
       .post(`${BASE_URL}users/`, data)
       .then(() => {
         getAllUsers()
         handleClickShowModal()
+        newUserCreated()
       })
       .catch((err) => console.log(err));
   }
@@ -40,7 +69,10 @@ function App() {
   const deleteUser = (id) => {
     axios
       .delete(`${BASE_URL}users/${id}/`)
-      .then((res) => getAllUsers(res.data))
+      .then((res) => {
+      getAllUsers(res.data)
+      deletedUser()
+    })
       .catch((err) => console.log(err));
   }
 
@@ -60,7 +92,7 @@ function App() {
 
 
   return (
-    <div className="App" id={theme}> 
+    <div className="App" id={theme}>
       <Navbar theme={theme} changeTheme={changeTheme} handleClickShowModal={handleClickShowModal} />
       <ModalForm
         handleClickShowModal={handleClickShowModal}
@@ -76,7 +108,8 @@ function App() {
         setUpdatingUser={setUpdatingUser}
         handleClickShowModal={handleClickShowModal}
       />
-      <Footer/>
+      <ToastContainer />
+      <Footer />
     </div>
   )
 }
